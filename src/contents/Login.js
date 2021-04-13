@@ -1,5 +1,10 @@
 import React, {useState} from 'react';
+<<<<<<< HEAD
 import {Button, Form} from 'react-bootstrap';
+=======
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+>>>>>>> d6d26b24513384779e60d60cb139148c20e04883
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import "./Login.css";
 
@@ -8,6 +13,13 @@ export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword ] = useState("");
 
+<<<<<<< HEAD
+=======
+    function validateForm() {
+        return email.length > 0 && password.length > 0;
+        
+    }
+>>>>>>> d6d26b24513384779e60d60cb139148c20e04883
     function handleSubmit(event) {
         event.preventDefault();
     }
