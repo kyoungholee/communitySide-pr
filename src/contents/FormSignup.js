@@ -1,6 +1,6 @@
 import React from 'react';
-import validate from './contents/validateInfo';
-import useForm from './contents/useForm';
+import validate from './validateInfo';
+import useForm from './useForm';
 import './Form.css';
 
 
@@ -15,10 +15,6 @@ const FormSignup = ({submitForm}) => {
   return (
     <div className='form-content-right'>
     <form onSubmit={handleSubmit} className='form' noValidate>
-      <h1>
-        Get started with us today! Create your account by filling out the
-        information below.
-      </h1>
       <div className='form-inputs'>
         <label className='form-label'>Username</label>
         <input
@@ -67,7 +63,7 @@ const FormSignup = ({submitForm}) => {
         />
         {errors.password2 && <p>{errors.password2}</p>}
       </div>
-      <button className='form-input-btn' type='submit'>
+      <button className='form-input-btn' type='submit' label="submit">
         Sign up
       </button>
       <span className='form-input-login'>
@@ -75,6 +71,6 @@ const FormSignup = ({submitForm}) => {
       </span>
     </form>
   </div>
-);
+  );
 };
 export default FormSignup;

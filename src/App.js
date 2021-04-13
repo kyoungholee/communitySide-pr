@@ -6,8 +6,6 @@ import Logo from './contents/Logo';
 import Login from './contents/Login';
 import Form from './contents/Form';
 import post from './contents/post';
-import Sign from './contents/Sign';
-
 
 function App() {
   return(
@@ -17,21 +15,17 @@ function App() {
           <ul className="nav-links">
             <Link to='/' className="nav-logo"><li>로고</li></Link>
             <Link to='/post'  className="nav-items"><li>자유게시판</li></Link>
-
             <Link to='/Login' className="nav-items" ><li>로그인</li></Link>
             <Link to ='/Form' className = "nav-items"><li>회원가입</li></Link>
-
-            <Link to='/Sign' className="nav-items"><li>회원가입</li></Link>
-            <Link to='/login' className="nav-items" ><li>로그인</li></Link>
           </ul>
         </div>
         <div>
           <Switch>
             <Route path='/Login' component={Login} />
             <Route path='/Form' component={Form} />
-            <Route path='/Sign' component={Sign} />
             <Route path='/post' component={post} />
             <Route exact path='/' component={Logo} />
+            
           </Switch>
         </div>
       </Router>

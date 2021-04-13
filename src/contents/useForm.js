@@ -1,25 +1,25 @@
-import React from 'react';
 import {useState, useEffect } from 'react';
 
-const useForm = (validate) => {
+const useForm = (callback, validate) => {
+
 
     const [values, setValues] = useState({
         username: '',
         email: '',
         password: '',
         password2: ''
-    })
+    });
 
     const [errors, setErrors] = useState({});
-    const [isSubmitting, setIsSubmitting] = useState
-    (false)
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleChange = e => {
+        const { name, value } = e.target;
         setValues({
-            ...values,
-            [e.target.name] : e.target.values
+        ...values,
+        [name]: value
         });
-    };
+     };
 
     //바인딩 해주는 곳 !!
     //회원가입에 중복 가입을 하지 못하게 해준다. 
@@ -28,7 +28,16 @@ const useForm = (validate) => {
 
         setErrors(validate(values));
         setIsSubmitting(true);
-    };
+    }
+
+    useEffect(
+        () => {
+            if (Object.keys(errors).length === 0 && isSubmitting) {
+                callback();
+            }
+        },
+            [errors]
+        );
 
 
     return { handleChange, values, handleSubmit, errors};
