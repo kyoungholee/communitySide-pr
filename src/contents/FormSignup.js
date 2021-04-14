@@ -13,7 +13,7 @@ const FormSignup = ({submitForm}) => {
   );
 
   return (
-    <div className='form-content-right'>
+    <div className='signform'>
     <form onSubmit={handleSubmit} className='form' noValidate>
       <div className='form-inputs'>
         <label className='form-label'>Username</label>
@@ -51,6 +51,7 @@ const FormSignup = ({submitForm}) => {
         />
         {errors.password && <p>{errors.password}</p>}
       </div>
+      
       <div className='form-inputs'>
         <label className='form-label'>Confirm Password</label>
         <input
@@ -63,11 +64,38 @@ const FormSignup = ({submitForm}) => {
         />
         {errors.password2 && <p>{errors.password2}</p>}
       </div>
+
+      <div className='form-inputs'>
+        <label className='form-label'>Grade</label>
+        <input
+          className='form-input'
+          type='grade'
+          name='grade'
+          placeholder='Enter your grade'
+          value={values.grade}
+          onChange={handleChange}
+        />
+        {errors.grade && <p>{errors.grade}</p>}
+      </div>
+
+      <div className='form-inputs'>
+        <label className='form-label'>Gender</label>
+        <input
+          className='form-input'
+          type='gender'
+          name='gender'
+          placeholder='Enter your gender'
+          value={values.gender}
+          onChange={handleChange}
+        />
+        {errors.gender && <p>{errors.gender}</p>}
+      </div>
+
       <button className='form-input-btn' type='submit' label="submit">
         Sign up
       </button>
       <span className='form-input-login'>
-        Already have an account? Login <a href='/'>here</a>
+        Already have an account? Login <a href='/login'>here</a>
       </span>
     </form>
   </div>
