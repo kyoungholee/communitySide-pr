@@ -1,11 +1,36 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const api  = require('./routes/index');
-const cors = require('cors');
+const cors = require("cors");
+const session = require("express-session");
+const connect = require("./dataBase");
 
-app.use(cors());
-app.use('/api', api);
+connect();
 
-const port = 3002;
-app.listen(port, ()=>console.log(`Listening on port ${port}`));
+const corsOptions = {
+  origin: true,
+  credentials: true
+};
 
+app.use(
+  session({
+    resave: false,
+    saveUninitialized: true,
+    secret: "maq",
+    cookie: {
+      httpOnly: true,
+      secure: false
+    }
+  })
+);
+
+app.use(cors(corsOptions));
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use("/member", require("./routes/memberRouter"));
+app.use("/board", require("./routes/boardRouter"));
+
+app.listen(8080, () => {
+  console.log("listen umm..umm..um...");
+});
