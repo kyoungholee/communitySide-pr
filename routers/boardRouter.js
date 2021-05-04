@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Board = require("../dataBase/board");
+const Board = require("../backend/board");
 
 router.post("/delete", async (req, res) => {
   try {
