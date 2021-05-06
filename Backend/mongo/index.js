@@ -6,7 +6,7 @@ module.exports = () => {
       mongoose.set("debug", true);
     }
     mongoose.connect(
-      "mongodb://localhost:3003/til",
+      "mongodb://localhost:27017/til",
       {
         dbName: "til"
       },
@@ -29,4 +29,5 @@ module.exports = () => {
   });
   require("./user");
   require("./board");
+  require("./notice");
 };

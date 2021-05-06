@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Board = require("../backend/board");
+const Board = require("../Backend/mongo/board");
 
 router.post("/delete", async (req, res) => {
   try {
@@ -22,9 +22,7 @@ router.post("/update", async (req, res) => {
         $set: {
           title: req.body.title,
           content: req.body.content
-        }
-      }
-    );
+      }});
     res.json({ message: "게시글이 수정 되었습니다." });
   } catch (err) {
     console.log(err);

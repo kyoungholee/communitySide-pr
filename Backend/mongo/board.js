@@ -18,9 +18,6 @@ const Backendboard = new Backend({
     type: String,
     required: true
   },
-  imgPath: {
-    type: String
-  },
   createdAt: {
     type: Date,
     default: Date.now

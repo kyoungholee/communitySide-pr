@@ -5,6 +5,7 @@ import './App.css';
 import Login from './contents/Login';
 import Form from './contents/Form';
 import boardWriteForm from './contents/boardWriteForm';
+import NoticeComponent from './contents/NoticeComponents';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
             <Link to='/Login' className="nav" ><li>Login</li></Link>
             <Link to ='/Form' className = "nav"><li>Sign-up</li></Link>
             <Link to ='/boardWriteForm' className = "nav"><li>boardWriteForm</li></Link>
+            <Link to ='/NoticeComponents' className = "nav"><li>NoticeComponent</li></Link>
           </ul>
         </div>
         <div>
@@ -25,6 +27,7 @@ function App() {
             <Route path ='/Login' component ={Login} />
             <Route path ='/Form' component ={Form} />
             <Route path ='/boardWriteForm' component = {boardWriteForm}/>
+            <Route path = '/NoticeComponents' component = {NoticeComponent}/>
             
           </Switch>
         </div>

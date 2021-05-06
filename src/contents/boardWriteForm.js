@@ -9,6 +9,7 @@ class BoardWriteForm extends Component {
     data: ""
   };
 
+  //렌더링 이후 
   componentDidMount() {
     if (this.props.location.query !== undefined) {
       this.boardTitle.value = this.props.location.query.title;
