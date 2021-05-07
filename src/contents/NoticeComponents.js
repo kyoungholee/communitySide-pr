@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import axios from "axios";
-import Pagination from '../Pagination';
-import moment from 'moment';
+import Pagination from '../contents/Pagination';
 
 
 const NoticeComponent = (props) => {
@@ -11,7 +10,7 @@ const NoticeComponent = (props) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(10);
 
-    axios.post('/notice', {
+    axios.post('../Backend/mongo/user', {
         number : '1',
         id : "asdwdlstion",
         name: "홍길동",
@@ -60,7 +59,7 @@ const NoticeComponent = (props) => {
                             <td>{post.type}</td>
                             <td className="text-left"><Link className="text-ellipsis" to={{ pathname: '/noticeDetail', state: { _id: post._id } }} style={{ color: '#909090' }}>{post.title}</Link></td>
                             <td>{post.userName}</td>
-                            <td>{moment(post.date).format('YYY-MM-DD')}</td>
+            
                             <td>{post.readCount}</td>
 
                             </tr>

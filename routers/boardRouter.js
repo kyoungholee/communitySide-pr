@@ -1,6 +1,7 @@
+//CRUD 하는 법 
 const express = require("express");
 const router = express.Router();
-const Board = require("../Backend/mongo/board");
+const Board = require("../board");
 
 router.post("/delete", async (req, res) => {
   try {
@@ -20,6 +21,7 @@ router.post("/update", async (req, res) => {
       { _id: req.body._id },
       {
         $set: {
+          writer : req.body.writer,
           title: req.body.title,
           content: req.body.content
       }});
@@ -49,6 +51,7 @@ router.post("/write", async (req, res) => {
   }
 });
 
+//게시글 목록 조회 
 router.post("/getBoardList", async (req, res) => {
   try {
     const _id = req.body._id;
