@@ -15,22 +15,7 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    salt: {
-        type: String,
-        required: true
-    },
-    createdAt: {
-        type: Date,
-        default: Date.now
-    },
-    loginCnt: {
-        type: Number,
-        default: 0
-    },
-    lockYn: {
-        type: Boolean,
-        default: false
-    }
+   
     });
 
     module.exports = mongoose.model("User", userSchema);

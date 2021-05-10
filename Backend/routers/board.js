@@ -1,6 +1,6 @@
-var express = require('express');
-var Board = require('../models/board');
-var mongoose = require('mongoose');
+const express = require('express');
+const Board = require('../models/board');
+const mongoose = require('mongoose');
  
 const router = express.Router();
  
@@ -10,8 +10,7 @@ router.post('/', (req, res) => {
       error: "EMPTY USERNAME",
       code: 2
     });
-  }
-  
+  }  
   if (req.body.contents === "") {
     return res.status(400).json({
       error: "EMPTY CONTENTS",

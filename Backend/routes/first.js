@@ -1,5 +1,5 @@
 const express = require('express');
-const board = require('./board');
+const board = require('../routers/board');
  
 const router = express.Router();
 router.use('/board',board);

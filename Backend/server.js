@@ -18,12 +18,18 @@ mongoose.connect('mongodb://localhost/test', {
     useCreateIndex: true,
 });
 
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-app.use(bodyParser.json());
+
+app.use("/user", require("./routers/userCRUD"));
+
+
 app.use(cors());
 app.use('/api', api);
 
 const port = 3002;
 app.listen(port, ()=>console.log(`Listening on port ${port}`));
+
+require("./user");
