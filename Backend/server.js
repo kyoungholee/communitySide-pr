@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 
-const db = mongoose.connection;
+const db = mongoose.connection; 
 db.on('error', console.error);
 db.once('open', function(){
   console.log('connected mongodb server!');
@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use("/user", require("./routers/userCRUD"));
-
+app.use("/board", require("./routers/boardCRUD"));
 
 
 app.use(cors());

@@ -1,12 +1,10 @@
 const mongoose = require('mongoose');
  
-const Schema = mongoose.Schema;
- 
-const Board = new Schema({
-  writer: {
+const { Schema } = mongoose;
+const boardSchema = new Schema({
+  name: {
     type: String,
     required: true,
-    ref: "User"
   },
   title: {
     type: String,
@@ -22,5 +20,5 @@ const Board = new Schema({
   }
 })
  
-module.exports = mongoose.model('board',Board);
+module.exports = mongoose.model("Board",boardSchema);
  
