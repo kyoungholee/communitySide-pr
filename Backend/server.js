@@ -12,7 +12,7 @@ db.once('open', function(){
   console.log('connected mongodb server!');
 });
 
-mongoose.connect('mongodb://localhost/test', {
+mongoose.connect('mongodb://localhost:27017/test', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
@@ -26,10 +26,9 @@ app.use(bodyParser.urlencoded({
 app.use("/user", require("./routers/userCRUD"));
 
 
+
 app.use(cors());
 app.use('/api', api);
 
 const port = 3002;
 app.listen(port, ()=>console.log(`Listening on port ${port}`));
-
-require("./user");
