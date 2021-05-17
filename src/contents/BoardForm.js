@@ -92,7 +92,7 @@ class BoardForm extends Component {
             <thead>
               <tr>
                 <th>날짜</th>
-                <th>글 제목</th>
+                <th>글 제목 입니다.. !! </th>
               </tr>
             </thead>
             <tbody>{this.state.boardList}</tbody>

@@ -3,20 +3,19 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Pagination from '../contents/Pagination';
 
-
 const NoticeComponent = (props) => {
 
     const [posts, setPosts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(10);
 
-    axios.post('../Backend/mongo/user', {
-        number : '1',
-        id : "asdwdlstion",
-        name: "홍길동",
-        password : "123123",
-        email : "dwadw@nave.com"
-    });
+    useEffect(() => {
+        const fetchPosts = async() => {
+            let res = await('./contents/noticeList');
+        }
+
+        fetchPosts();
+    }, []);
 
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -24,11 +23,11 @@ const NoticeComponent = (props) => {
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     return (
-        <div className="container" style={{ fontFamily: 'Noto Sans Korean,Malgun Gothic,sans-serif' }}>
-            <div className="lf-menu-nav"><span>공지사항</span></div>
+        <div className="container">
+            <div className="lf-menu-nav"><span>게시판이 저장되는 곳입니다.</span></div>
             <div className="lf-contents pd12">
             <div className="top-controls">
-                <a href="/noticewrite"><button className="lf-button primary float-right">글쓰기</button></a>
+                <a href="/noticeWriteForm"><button>글쓰기</button></a>
             </div>
                 <div style={{ padding: "0 12px" }}>
                 <table className="board_list text-center">
@@ -43,7 +42,7 @@ const NoticeComponent = (props) => {
                     </colgroup>
                     <thead>
                         <tr>
-                            <th>번호</th>
+                            <th>번호입니다.  </th>
                             <th>구분</th>
                             <th>제목</th>
                             <th>작성자</th>

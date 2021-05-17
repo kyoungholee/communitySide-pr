@@ -6,6 +6,7 @@ import Login from './contents/Login';
 import Form from './contents/Form';
 import boardWriteForm from './contents/boardWriteForm';
 import NoticeComponent from './contents/NoticeComponents';
+import noticeWriteForm from './contents/noticeWriteForm';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
             <Route path ='/Form' component ={Form} />
             <Route path ='/boardWriteForm' component = {boardWriteForm}/>
             <Route path = '/NoticeComponents' component = {NoticeComponent}/>
+            <Route path = '/noticeWriteForm' component = {noticeWriteForm}/>
             
           </Switch>
         </div>
