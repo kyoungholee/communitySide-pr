@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Button, Form} from "react-bootstrap";
 import axios from "axios";
+import CKEditor from "ckeditor4-react";
+
 axios.defaults.withCredentials = true;
 const headers = { withCredentials: true };
 
@@ -93,6 +95,10 @@ class BoardWriteForm extends Component {
             placeholder="글 제목"
             ref={ref => (this.boardTitle = ref)}
         />
+          <CKEditor
+          data={this.state.data}
+          onChange={this.onEditorChange}
+        ></CKEditor>
         <Button onClick={this.writeBoard} block>
           저장하기
         </Button>

@@ -27,7 +27,7 @@ const NoticeComponent = (props) => {
             <div className="lf-menu-nav"><span>게시판이 저장되는 곳입니다.</span></div>
             <div className="lf-contents pd12">
             <div className="top-controls">
-                <a href="/noticeWriteForm"><button>글쓰기</button></a>
+                <a href="/boardWriteForm"><button>글쓰기</button></a>
             </div>
                 <div style={{ padding: "0 12px" }}>
                 <table className="board_list text-center">

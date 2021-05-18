@@ -19,7 +19,6 @@ function App() {
           <ul className="nav-links">
             <Link to='/Login' className="nav" ><li>Login</li></Link>
             <Link to ='/Form' className = "nav"><li>Sign-up</li></Link>
-            <Link to ='/boardWriteForm' className = "nav"><li>boardWriteForm</li></Link>
             <Link to ='/NoticeComponents' className = "nav"><li>NoticeComponent</li></Link>
           </ul>
         </div>
@@ -29,7 +28,6 @@ function App() {
             <Route path ='/Form' component ={Form} />
             <Route path ='/boardWriteForm' component = {boardWriteForm}/>
             <Route path = '/NoticeComponents' component = {NoticeComponent}/>
-            <Route path = '/noticeWriteForm' component = {noticeWriteForm}/>
             
           </Switch>
         </div>
